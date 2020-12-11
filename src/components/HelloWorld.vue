@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "HelloWorld",
   data() {
@@ -15,8 +17,9 @@ export default {
     };
   },
   methods: {
-    getUser() {
-      // see other branches for implementations
+    async getUser() {
+      const response = await axios.get("/user");
+      this.user = response.data;
     },
   },
   created() {
