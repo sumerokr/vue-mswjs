@@ -5,8 +5,6 @@ describe("HelloWorld.vue", () => {
   it("renders nothing when user is fetching", () => {
     const wrapper = mount(HelloWorld);
 
-    console.log(wrapper.html());
-
     expect(wrapper.text()).not.toContain("admin");
   });
 
