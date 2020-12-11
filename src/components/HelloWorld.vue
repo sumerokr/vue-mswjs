@@ -15,8 +15,9 @@ export default {
     };
   },
   methods: {
-    getUser() {
-      // see other branches for implementations
+    async getUser() {
+      const response = await fetch("/user").then((res) => res.json());
+      this.user = response;
     },
   },
   created() {
