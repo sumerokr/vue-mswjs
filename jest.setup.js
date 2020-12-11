@@ -1,5 +1,11 @@
 // src/setupTests.js
 import { server } from "./src/mocks/server.js";
+import fetch from "node-fetch";
+
+if (!globalThis.fetch) {
+  globalThis.fetch = fetch;
+}
+
 // Establish API mocking before all tests.
 beforeAll(() => server.listen());
 

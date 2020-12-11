@@ -15,8 +15,12 @@ export default {
     };
   },
   methods: {
-    getUser() {
-      // see other branches for implementations
+    async getUser() {
+      // use absolute url for node-fetch
+      const response = await fetch("https://example.com/user").then((res) =>
+        res.json()
+      );
+      this.user = response;
     },
   },
   created() {
